@@ -1,0 +1,11 @@
+alias ansible='docker run -v $(pwd):/ansible -ti --rm ansible ansible'
+alias ansible-connection='docker run -v $(pwd):/ansible -ti --rm ansible ansible-connection'
+alias ansible-doc='docker run -v $(pwd):/ansible -ti --rm ansible ansible-doc'
+alias ansible-inventory='docker run -v $(pwd):/ansible -ti --rm ansible ansible-inventory'
+alias ansible-pull='docker run -v $(pwd):/ansible -ti --rm ansible ansible-pull'
+alias ansible-config='docker run -v $(pwd):/ansible -ti --rm ansible ansible-config'
+alias ansible-console='docker run -v $(pwd):/ansible -ti --rm ansible ansible-console'
+alias ansible-galaxy='docker run -v $(pwd):/ansible -ti --rm ansible ansible-galaxy'
+alias ansible-playbook='docker run -v $(pwd):/ansible -ti --rm ansible ansible-playbook'
+alias ansible-vault='docker run -v $(pwd):/ansible -ti --rm ansible ansible-vault'
+
