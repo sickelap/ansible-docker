@@ -1,11 +1,14 @@
-alias ansible='docker run -v $(pwd):/ansible -ti --rm ansible ansible'
-alias ansible-connection='docker run -v $(pwd):/ansible -ti --rm ansible ansible-connection'
-alias ansible-doc='docker run -v $(pwd):/ansible -ti --rm ansible ansible-doc'
-alias ansible-inventory='docker run -v $(pwd):/ansible -ti --rm ansible ansible-inventory'
-alias ansible-pull='docker run -v $(pwd):/ansible -ti --rm ansible ansible-pull'
-alias ansible-config='docker run -v $(pwd):/ansible -ti --rm ansible ansible-config'
-alias ansible-console='docker run -v $(pwd):/ansible -ti --rm ansible ansible-console'
-alias ansible-galaxy='docker run -v $(pwd):/ansible -ti --rm ansible ansible-galaxy'
-alias ansible-playbook='docker run -v $(pwd):/ansible -ti --rm ansible ansible-playbook'
-alias ansible-vault='docker run -v $(pwd):/ansible -ti --rm ansible ansible-vault'
+_ansible_docker() {
+  docker run -u $(id -u):$(id -g) -ti --rm -v $(pwd):/ansible ansible $@
+}
 
+alias ansible='_ansible_docker ansible'
+alias ansible-connection='_ansible_docker ansible-connection'
+alias ansible-doc='_ansible_docker ansible-doc'
+alias ansible-inventory='_ansible_docker ansible-inventory'
+alias ansible-pull='_ansible_docker ansible-pull'
+alias ansible-config='_ansible_docker ansible-config'
+alias ansible-console='_ansible_docker ansible-console'
+alias ansible-galaxy='_ansible_docker ansible-galaxy'
+alias ansible-playbook='_ansible_docker ansible-playbook'
+alias ansible-vault='_ansible_docker ansible-vault'
